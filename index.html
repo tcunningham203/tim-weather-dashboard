@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather</title>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+</head>
+
+<body>
+    <header>
+        <nav class="nav">
+            <ul class="nav-header">
+                
+                <li class="title"> Weather Dashboard</li>
+                
+            </ul>
+
+        </nav>
+    </header>
+
+
+    <div class="intro" id="welcome">
+        <div class="intro-container" id="welcome-text">
+            <h2>
+                Test your Javascript knowledge with this 5 question quiz. You have 70 seconds to answer the questions.
+                You
+                will recieve a 10 second penalty for each incorrect answer. At the end, your remaining time is your
+                score.
+            </h2>
+
+        </div>
+
+        <div class="result-container2" id="lose-text">
+            <h2>
+                Oh no! You ran out of time. Try again?
+            </h2>
+
+        </div>
+
+        <button class="start-button" id="start-button">Start Quiz</button>
+
+    </div>
+
+
+    <div class="quiz-container" id="quiz">
+        <div class="question" id="question">
+            Q placeholder
+        </div>
+        <div class="all-choices" id="choices">
+            <button class="choice" id="btnA">A</button>
+
+            <button class="choice" id="btnB">B</button>
+
+            <button class="choice" id="btnC">C</button>
+
+            <button class="choice" id="btnD">D</button>
+        </div>
+    </div>
+    <div class="enter-your-score" id="input-box">
+        <h2>
+            You finished! Enter your initials to save your score.
+        </h2>
+
+        <input class="text" placeholder="Type your initals" id="text-box" maxlength="3">
+        <button class="enter" id="btnEnter" onclick="saveScore(event)">Enter</button>
+    </div>
+    <div class="result-container3" id="yes-text">
+        <h2>
+            That's right!
+        </h2>
+
+    </div>
+    <div class="result-container4" id="no-text">
+        <h2>
+            That's wrong!
+        </h2>
+
+    </div>
+
+    <div class="high-scores-page" id="high-scores-page">
+
+        <h2>
+            High Scores
+        </h2>
+        <ul class="high-scores-list" id="high-scores-list">No scores yet...</ul>
+
+        <button class="back" id="btnBack">Go Back</button>
+        <button class="clear" id="btnClear">Clear Scores</button>
+    </div>
+
+
+
+
+
+    <script src="./js/script.js"></script>
+</body>
+
+</html>
