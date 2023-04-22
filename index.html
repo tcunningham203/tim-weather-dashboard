@@ -23,7 +23,7 @@
 
             <div class=" p-4 col-md-3 mx-auto">
                 <form class="d-flex" role="search">
-                    <input class="form-control me-2 " type="search" placeholder="Search for a city" aria-label="Search">
+                    <input class="form-control me-2 " id="search-box" type="search" placeholder="Search for a city" aria-label="Search">
                     <button id="search-button" class="btn btn-primary" type="submit">Go</button>
                 </form>
             </div>
@@ -40,20 +40,27 @@
             <h3 >Current Weather</h3>
             <div class="row mb-3">
                 <div class=" col-lg-11 mx-auto bg-secondary-subtle border border-secondary rounded-3">
-                    Level 2: .col-8 .col-sm-6 Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1:
-                    .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1:
-                    .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1:
-                    .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1:
-                    .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1:
-                    .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1:
-                    .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1:
-                    .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1:
-                    .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1:
-                    .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3
+                  
+                <div class="row  text-center">
+                    <h4 id="date-big" class="row col-lg-2">City (Date)</h4>
+                    
+                </div>
+                <div class="row  text-center">
+                    <div class="img1">
+                        <img id="pic-big">
+                      </div>
+                    <h5 id="temp-big" class="row col-lg-2">Temp:</h5> <h5 id="wind-big" class="row col-lg-2">Wind:</h5> <h5 id="hum-big" class="row col-lg-2">Humidity:</h5>
+                </div>
                 </div>
                 <h3 >5 Day Forecast</h3>
                 <div class="col-lg-2 mx-auto bg-secondary-subtle border border-secondary rounded-3">
-                    Level 2: .col-4 .col-sm-6 Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1:
+                    <div class="row  text-center">
+                        <h4 id="date-small" class="row col-lg-2">Date</h4>
+                        <div class="img1">
+                            <img id="pic-small">
+                          </div>
+                        <h5 id="temp-small" class="row col-lg-2">Temp:</h5> <h5 id="wind-small" class="row col-lg-2">Wind:</h5> <h5 id="hum-small" class="row col-lg-2">Humidity:</h5>
+                    </div>
                    
                 </div>
                 <div class="col-lg-2 mx-auto bg-secondary-subtle border border-secondary rounded-3">
