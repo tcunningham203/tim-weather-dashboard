@@ -36,3 +36,4 @@ In this section, I'll briefly discuss some of the challenges and successes with 
 
 In an early commit, I used the HTML and CSS from my own "Javascript Code Quiz" project to have a foundation. In later commits, I removed some of that code and changed it to suit this project.
 
+I used the Bootstrap documentation to help style the page.

@@ -11,12 +11,12 @@
     <!-- <link rel="stylesheet" href="./assets/css/style.css" /> -->
 </head>
 
-<body class="bg-info-subtle">
+<body class="bg-secondary-subtle">
 
     <header>
 
         <nav
-            class="row mx-auto bg-body-tertiary  text-primary-emphasis bg-primary-subtle border border-primary-subtle">
+            class="row bg-body-tertiary  text-primary-emphasis bg-primary-subtle border border-primary">
             <h2 class=" p-1 col-md-8 text-center">
                 ~ Weather Dashboard ~ <br> Search for a city to get its 5 day forecast.
             </h2>
@@ -24,7 +24,7 @@
             <div class=" p-4 col-md-3 mx-auto">
                 <form class="d-flex" role="search">
                     <input class="form-control me-2 " type="search" placeholder="Search for a city" aria-label="Search">
-                    <button class="btn btn-primary" type="submit">Go</button>
+                    <button id="search-button" class="btn btn-primary" type="submit">Go</button>
                 </form>
             </div>
 
@@ -36,10 +36,10 @@
     <div class="row ">
         
         <div
-            class="col-lg-8  mx-auto text-center mt-3 p-1 text-primary-emphasis bg-primary-subtle border-primary rounded-5 ">
+            class="col-lg-8  mx-auto text-center mt-3  text-primary-emphasis bg-primary-subtle border border-primary rounded-5 ">
             <h3 >Current Weather</h3>
-            <div class="row ">
-                <div class="col-12 mx-auto p-3">
+            <div class="row mb-3">
+                <div class=" col-lg-11 mx-auto bg-secondary-subtle border border-secondary rounded-3">
                     Level 2: .col-8 .col-sm-6 Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1:
                     .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1:
                     .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1:
@@ -52,70 +52,30 @@
                     .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3
                 </div>
                 <h3 >5 Day Forecast</h3>
-                <div class="col-2 mx-auto">
+                <div class="col-lg-2 mx-auto bg-secondary-subtle border border-secondary rounded-3">
                     Level 2: .col-4 .col-sm-6 Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1:
-                    .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1:
-                    .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1:
-                    .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1:
-                    .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1:
-                    .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1:
-                    .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1:
-                    .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1:
-                    .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1:
-                    .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3
+                   
                 </div>
-                <div class="col-2 mx-auto">
+                <div class="col-lg-2 mx-auto bg-secondary-subtle border border-secondary rounded-3">
                     Level 2: .col-4 .col-sm-6 Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1:
-                    .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1:
-                    .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1:
-                    .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1:
-                    .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1:
-                    .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1:
-                    .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1:
-                    .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1:
-                    .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1:
-                    .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3
+                 
                 </div>
-                <div class="col-2 mx-auto">
+                <div class="col-lg-2 mx-auto bg-secondary-subtle border border-secondary rounded-3">
                     Level 2: .col-4 .col-sm-6 Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1:
-                    .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1:
-                    .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1:
-                    .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1:
-                    .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1:
-                    .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1:
-                    .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1:
-                    .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1:
-                    .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1:
-                    .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3
+               
                 </div>
-                <div class="col-2 mx-auto">
+                <div class="col-lg-2 mx-auto bg-secondary-subtle border border-secondary rounded-3">
                     Level 2: .col-4 .col-sm-6 Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1:
-                    .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1:
-                    .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1:
-                    .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1:
-                    .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1:
-                    .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1:
-                    .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1:
-                    .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1:
-                    .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1:
-                    .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3
+                
                 </div>
-                <div class="col-2 mx-auto">
+                <div class="col-lg-2 mx-auto bg-secondary-subtle border border-secondary rounded-3">
                     Level 2: .col-4 .col-sm-6 Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1:
-                    .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1:
-                    .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1:
-                    .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1:
-                    .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1:
-                    .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1:
-                    .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1:
-                    .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1:
-                    .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1:
-                    .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3
+                
                 </div>
             </div>
         </div>
         <div
-            class="col-lg-3  mx-auto text-center mt-3 p-1 text-primary-emphasis bg-primary-subtle border-primary rounded-5 ">
+            class="col-lg-3 p-2 mx-auto text-center mt-3 p-1 text-primary-emphasis bg-primary-subtle border border-primary rounded-5 ">
 
             <h3>Most Recent Searches</h3>
             <ul class="list-group">
@@ -125,17 +85,8 @@
                 <li class="list-group-item">A fourth item</li>
                 <li class="list-group-item">And a fifth one</li>
             </ul>
-            <button type="button" class="btn btn-warning text-center">Clear Search History</button>
-            Level 1: .col-sm-3 Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1:
-            .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1:
-            .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1:
-            .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1:
-            .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1:
-            .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1:
-            .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1:
-            .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1:
-            .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3Level 1:
-            .col-sm-3Level 1: .col-sm-3Level 1: .col-sm-3
+            <button id="clear-button" type="button" class="btn btn-warning mt-3 text-center">Clear Search History</button>
+        
         </div>
     </div>
 
