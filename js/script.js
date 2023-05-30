@@ -31,8 +31,9 @@ btnSearch.addEventListener("click", function (event) {
 });
 
 function fetchData() {
-  var city = boxSearch.value;
-  var queryURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${APIKey}`;
+    var city = boxSearch.value;
+    city = city.charAt(0).toUpperCase() + city.slice(1);
+  var queryURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${APIKey}`;
 
   fetch(queryURL)
     .then(function (response) {
@@ -44,9 +45,9 @@ function fetchData() {
     })
     .then(function (data) {
       displayCurrentWeather(data);
-      currentWeatherContainer.classList.remove("hidden"); 
-      
-      var forecastURL = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${APIKey}`;
+      currentWeatherContainer.classList.remove("hidden");
+
+      var forecastURL = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=imperial&appid=${APIKey}`;
       fetch(forecastURL)
         .then(function (response) {
           if (response.ok) {
@@ -57,6 +58,7 @@ function fetchData() {
         })
         .then(function (data) {
           displayFiveDayForecast(data);
+          addRecentSearch(city);
         })
         .catch(function (error) {
           console.error(error);
@@ -78,14 +80,14 @@ function displayCurrentWeather(data) {
 
   dateBig.textContent = city + " (" + date + ")";
   picBig.setAttribute("src", iconURL);
-  tempBig.textContent = "Temperature: " + temperature + " K";
+  tempBig.textContent = "Temperature: " + temperature + " °F";
   windBig.textContent = "Wind: " + windSpeed + " m/s";
   humBig.textContent = "Humidity: " + humidity + "%";
 }
 
 function displayFiveDayForecast(data) {
   for (var i = 0; i < 5; i++) {
-    var forecastData = data.list[i * 8]; 
+    var forecastData = data.list[i * 8 + 4];
     var date = new Date(forecastData.dt * 1000).toLocaleDateString();
     var temperature = forecastData.main.temp;
     var windSpeed = forecastData.wind.speed;
@@ -95,8 +97,79 @@ function displayFiveDayForecast(data) {
 
     dateSmall[i].textContent = date;
     picSmall[i].setAttribute("src", iconURL);
-    tempSmall[i].textContent = "Temp: " + temperature + " K";
+    tempSmall[i].textContent = "Temp: " + temperature + " °F";
     windSmall[i].textContent = "Wind: " + windSpeed + " m/s";
     humSmall[i].textContent = "Humidity: " + humidity + "%";
   }
 }
+
+var recentSearches = [];
+
+
+function loadRecentSearches() {
+  var storedSearches = localStorage.getItem("recentSearches");
+  if (storedSearches) {
+    recentSearches = JSON.parse(storedSearches);
+    displayRecentSearches();
+  }
+}
+
+
+function saveRecentSearches() {
+  localStorage.setItem("recentSearches", JSON.stringify(recentSearches));
+}
+
+
+function displayRecentSearches() {
+  var recentSearchesList = document.getElementById("recent-searches");
+  recentSearchesList.innerHTML = "";
+
+  recentSearches.forEach(function (search) {
+    var listItem = document.createElement("a");
+    listItem.className = "list-group-item list-group-item-action list-group-item-primary";
+    listItem.textContent = search;
+    recentSearchesList.appendChild(listItem);
+
+
+    listItem.addEventListener("click", function () {
+      boxSearch.value = search;
+      fetchData();
+    });
+  });
+
+  if (recentSearches.length > 0) {
+    recentSearchesList.style.display = "block";
+  } else {
+    recentSearchesList.style.display = "none";
+  }
+}
+
+
+function addRecentSearch(search) {
+search = search.charAt(0).toUpperCase() + search.slice(1);
+  var index = recentSearches.indexOf(search);
+  if (index !== -1) {
+    recentSearches.splice(index, 1);
+  }
+
+  recentSearches.unshift(search);
+
+  if (recentSearches.length > 10) {
+    recentSearches.pop();
+  }
+
+  saveRecentSearches();
+  displayRecentSearches();
+}
+
+function clearRecentSearches() {
+  recentSearches = [];
+  saveRecentSearches();
+  displayRecentSearches();
+}
+
+btnClear.addEventListener("click", function () {
+  clearRecentSearches();
+});
+
+loadRecentSearches();
