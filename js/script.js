@@ -9,11 +9,19 @@ var tempBig = document.getElementById("temp-big");
 var windBig = document.getElementById("wind-big");
 var humBig = document.getElementById("hum-big");
 
-var dateSmall = document.getElementById("date-small");
-var picSmall = document.getElementById("pic-small");
-var tempSmall = document.getElementById("temp-small");
-var windSmall = document.getElementById("wind-small");
-var humSmall = document.getElementById("hum-small");
+var dateSmall = [];
+var picSmall = [];
+var tempSmall = [];
+var windSmall = [];
+var humSmall = [];
+
+for (var i = 0; i < 5; i++) {
+  dateSmall[i] = document.getElementById("date-small-" + i);
+  picSmall[i] = document.getElementById("pic-small-" + i);
+  tempSmall[i] = document.getElementById("temp-small-" + i);
+  windSmall[i] = document.getElementById("wind-small-" + i);
+  humSmall[i] = document.getElementById("hum-small-" + i);
+}
 
 var currentWeatherContainer = document.getElementById("weather-container");
 
@@ -36,7 +44,23 @@ function fetchData() {
     })
     .then(function (data) {
       displayCurrentWeather(data);
-      currentWeatherContainer.classList.remove("hidden"); // Show the current weather container
+      currentWeatherContainer.classList.remove("hidden"); 
+      
+      var forecastURL = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${APIKey}`;
+      fetch(forecastURL)
+        .then(function (response) {
+          if (response.ok) {
+            return response.json();
+          } else {
+            throw new Error("Error fetching 5-day forecast data: " + response.status);
+          }
+        })
+        .then(function (data) {
+          displayFiveDayForecast(data);
+        })
+        .catch(function (error) {
+          console.error(error);
+        });
     })
     .catch(function (error) {
       console.error(error);
@@ -57,4 +81,22 @@ function displayCurrentWeather(data) {
   tempBig.textContent = "Temperature: " + temperature + " K";
   windBig.textContent = "Wind: " + windSpeed + " m/s";
   humBig.textContent = "Humidity: " + humidity + "%";
+}
+
+function displayFiveDayForecast(data) {
+  for (var i = 0; i < 5; i++) {
+    var forecastData = data.list[i * 8]; 
+    var date = new Date(forecastData.dt * 1000).toLocaleDateString();
+    var temperature = forecastData.main.temp;
+    var windSpeed = forecastData.wind.speed;
+    var humidity = forecastData.main.humidity;
+    var iconCode = forecastData.weather[0].icon;
+    var iconURL = `https://openweathermap.org/img/w/${iconCode}.png`;
+
+    dateSmall[i].textContent = date;
+    picSmall[i].setAttribute("src", iconURL);
+    tempSmall[i].textContent = "Temp: " + temperature + " K";
+    windSmall[i].textContent = "Wind: " + windSpeed + " m/s";
+    humSmall[i].textContent = "Humidity: " + humidity + "%";
+  }
 }
