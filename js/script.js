@@ -137,11 +137,7 @@ function displayRecentSearches() {
     });
   });
 
-  if (recentSearches.length > 0) {
-    recentSearchesList.style.display = "block";
-  } else {
-    recentSearchesList.style.display = "none";
-  }
+
 }
 
 
